@@ -9,6 +9,10 @@ if [cat /etc/redhat-release | grep "release 6"]; then
     CXXFLAGS+="-DCENTOS_6 -D__STDC_CONSTANT_MACROS"
 fi
 
+if [cat /etc/redhat-release | grep "Fedora"]; then
+   CXXFLAGS+="-std=c++11 -DXERCES_3"
+fi
+
 if [grep -i "opensuse" /etc/os-release]; then
     CXXFLAGS+="-std=c++11 -DXERCES_3"
 fi
